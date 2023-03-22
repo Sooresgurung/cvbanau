@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Document</title>
+</head>
+<body>
+  <div class="logim">
+    <img src="{% static 'images/dddd.jpg' %}" alt="">
+  </div>
+    <div class="signup">
+      <div class="loginpage">
+        <h1>Sign Up</h1>
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username">Username</label><br>
+            <input type="text" name="username" id="username" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="email">Email</label><br>
+            <input type="email" name="email" id="email" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="password1">Password</label><br>
+            <input type="password" name="password1" id="password1" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="password2">Confirm Password</label><br>
+            <input type="password" name="password2" id="password2" class="form-control" required><br>
+          </div><br>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>  
+      </div>    
+    </div>
+</body>
+</html>

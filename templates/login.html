@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>CV BANAU</title>
+</head>
+<body>
+    <div class="logim">
+      <img src="{% static 'images/dddd.jpg' %}" alt="">
+    </div>
+    <div class="container">
+      <div class="loginpage">
+        <!-- <p>LogIN</p> -->
+        
+        <form method="post">
+          {% csrf_token %}
+          <h2>LogIn Form</h2>
+          <div>
+          {% for dat in data %}
+           <p>{{dat.msg}}</p>
+          {% endfor %}
+         </div>
+          <div>
+          <label for="username">Username</label><br><br>
+          <input type="text" placeholder="Enter Username" name="username" required>
+        </div><br>
+        <div>
+          <label for="password">Password</label><br><br>
+          <input type="password" placeholder="Enter Password" name="password" required>
+        </div><br><br>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      </div>
+</body>
+</html>

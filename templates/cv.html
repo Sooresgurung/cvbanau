@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>CV BANAU</title>
+</head>
+<body>
+    <div class="mid">
+      <p id="top">CV OF PEOPLE</p>
+    </div>
+    <button class="cvbtn"><a href="{% url 'cvform' %}">Create a CV</a></button>
+    <button><a href="{% url 'logout' %}">logout</a>
+    {% for i in data %}
+    <div class="component">
+     <div class="profile"><img src="{{i.profile_pic.url}}" alt=""></div>
+     <div class="detail">
+      <p class="info">{{i.name}}</p>
+      <p class="topic">Address</p><hr>
+      <p class="info">{{i.email}}</p>
+      <p class="info">{{i.phone}}</p>
+      <p class="topic">Education</p><hr>
+      <p class="info">{{i.clz_name}}</p>
+      <p class="topic">Skill Highlights</p><hr>
+      <p class="info">{{i.skill}}</p>
+      <p class="topic">Interest</p><hr>
+      <p class="info">{{i.interest}}</p>
+      <p class="topic">Summary</p><hr>
+      <p class="info">{{i.summary}}</p>
+     </div>
+    </div><br><br><hr>
+  {% endfor %}   
+</body>
+</html>

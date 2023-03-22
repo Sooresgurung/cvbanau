@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Document</title>
+</head>
+<body>
+  <div class="logim">
+    <img src="{% static 'images/dddd.jpg' %}" alt="">
+  </div>
+    <div class="">
+      <div class="cvpage">
+        <h1>Create a CV FORM </h1>
+        <form method="post" action="{% url 'cvform' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username">Name</label><br>
+            <input type="text" name="name" id="username" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="email">Email</label><br>
+            <input type="email" name="email" id="email" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="phone">Phone</label><br>
+            <input type="number" name="phone" id="password1" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="clz_name">clz_name</label><br>
+            <input type="text" name="clz_name" id="password2" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="interest">Interest</label><br>
+            <input type="text" name="interest" id="password1" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="skill">Skill</label><br>
+            <input type="text" name="skill" id="password2" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="sumamry">Summary</label><br>
+            <input type="text" name="summary" id="password1" class="form-control" required><br>
+          </div><br>
+          <div class="form-group">
+            <label for="profile_pic">Profile</label><br>
+            <!-- <input type="file" alt="" width="48" height="48"> -->
+            <input type="file" name="profile_pic" id="password2" class="form-control" required><br>
+          </div><br>
+          <button type="submit" class="btn btn-primary">Create a Form </button>
+        </form>  
+      </div>    
+    </div>
+</body>
+</html>
